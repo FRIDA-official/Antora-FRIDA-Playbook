@@ -10,6 +10,6 @@ jobs:
       container: 
           image: antora/antora
       steps:
-        - name: install npm packages
+        - name: run playbook
           run: |
-                antora antora-playbook.yml    
+                antora antora-playbook 
