@@ -6,9 +6,9 @@ on:
       - master
 jobs:
     Deploy_Website:
-    runs-on: ubuntu-latest
-        container: 
-            image: antora/antora
+      runs-on: ubuntu-latest
+      container: 
+          image: antora/antora
         steps:
           - name: install npm packages
             run: |
