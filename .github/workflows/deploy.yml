@@ -12,4 +12,5 @@ jobs:
       steps:
         - name: run playbook
           run: |
-                antora antora-playbook 
+              ls
+              antora antora-playbook.yml
