@@ -9,7 +9,7 @@ jobs:
       runs-on: ubuntu-latest
       container: 
           image: antora/antora
-        steps:
-          - name: install npm packages
-            run: |
-                 antora antora-playbook.yml    
+      steps:
+        - name: install npm packages
+          run: |
+                antora antora-playbook.yml    
