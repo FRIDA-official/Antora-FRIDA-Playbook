@@ -24,7 +24,3 @@ ui:
     url: https://github.com/FRIDA-official/Antora-UI/archive/refs/heads/master.zip
     start_path: Antora-UI-master/src
     snapshot: true
-  supplemental_files:
-  - path: ui.yml
-    contents: "static_files: [ .nojekyll ]"
-  - path: .nojekyll
