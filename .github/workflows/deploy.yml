@@ -20,7 +20,7 @@ jobs:
         - name: run playbook
           run: |
               antora antora-playbook.yml --fetch
-              touch build/site/.nojekyll              
+              touch .nojekyll              
         - name: Add files
           run: | 
             git add ./build/*
