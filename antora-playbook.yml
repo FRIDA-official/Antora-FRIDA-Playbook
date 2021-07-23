@@ -21,5 +21,5 @@ content:
   #  start_path: docs
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
-    
+    url: https://github.com/FRIDA-official/Antora-UI/build/ui-bundle.zip
+  
