@@ -19,12 +19,10 @@ jobs:
           run: npm i -g @antora/cli@2.3 @antora/site-generator-default@2.3
         - name: run playbook
           run: |
-              antora antora-playbook.yml --fetch
-              touch .nojekyll              
+              antora antora-playbook.yml --fetch          
         - name: Add files
           run: | 
             git add ./build/*
-            git add .nojekyll
         - name: Commit files
           run: |
             git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
