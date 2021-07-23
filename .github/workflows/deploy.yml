@@ -19,7 +19,7 @@ jobs:
           run: npm i -g @antora/cli@2.3 @antora/site-generator-default@2.3
         - name: run playbook
           run: |
-              antora --fetch antora-playbook.yml
+              antora antora-playbook.yml --pull
         - name: Add files
           run: | 
             git add ./build/*
