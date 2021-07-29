@@ -8,9 +8,6 @@ content:
   - url: https://github.com/FRIDA-official/Antora-PensionService
     branches: master
     start_path: docs
-  - url: https://github.com/FRIDA-official/Antora-Homepage.git
-    branches: master
-    start_path: docs
   #- url: https://gitlab.com/antora/demo/demo-component-a.git
    # branches: master
     # setting edit_url to false disables the Edit this Page link for any page that originates from this repository
