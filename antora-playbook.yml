@@ -1,21 +1,17 @@
+# Define the basic settings of the site 
 site:
   title: FRIDA
-  # the 404 page and sitemap files only get generated when the url property is set
-  start_page: component-homepage::index.adoc
+  # The 404 page and sitemap files only get generated when the url property is set
+  start_page: component-pension::index.adoc
 
+# Define the components which should be included in the site
 content:
   sources:
   - url: https://github.com/FRIDA-official/Antora-PensionService
     branches: master
     start_path: docs
-  #- url: https://gitlab.com/antora/demo/demo-component-a.git
-   # branches: master
-    # setting edit_url to false disables the Edit this Page link for any page that originates from this repository
-    # the same thing can be achieved by adding empty credentials (i.e., @) in front of the domain in the URL
-    #edit_url: false
-  #- url: https://gitlab.com/antora/demo/demo-component-b.git
-  #  branches: [v2.0, v1.0]
-  #  start_path: docs
+# The ui defines the layout of the website. You can find the default ui under https://gitlab.com/antora/antora-ui-default
+# After you fork the repository you can make change it to fit your needs.
 ui:
   bundle:
     url: https://github.com/FRIDA-official/Antora-UI/raw/master/build/ui-bundle.zip
