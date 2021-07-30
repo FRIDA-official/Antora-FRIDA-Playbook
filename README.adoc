@@ -1,3 +1,6 @@
+Githubpages site:
+https://frida-official.github.io/Antora-FRIDA-Playbook/build/site/component-pension/1.0/PensionService/site.html
+
 = Antora Demo Site and Playbook Project
 // :idprefix:
 // :idseparator: -
