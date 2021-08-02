@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>FRIDA PensionSerivce :: FRIDA</title>
-    <meta name="keywords" content="openapi, rest, FRIDA PensionSerivce">
+    <title>Untitled :: FRIDA</title>
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -73,8 +72,8 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="site.html">site.adoc</a>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">index.adoc</a>
   </li>
 </ul>
   </li>
@@ -103,10 +102,11 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Pension Service</a></li>
-    <li><a href="index.html">FRIDA PensionSerivce</a></li>
+    <li><a href="index.html">index.adoc</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/FRIDA-official/Antora-PensionService/edit/master/docs/modules/PensionService/pages/index.adoc">Edit this Page</a></div>
@@ -116,621 +116,127 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">FRIDA PensionSerivce</h1>
-<div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_access">1. Access</a></li>
-<li><a href="#_endpoints">2. Endpoints</a>
-<ul class="sectlevel2">
-<li><a href="#_kalkulierung">2.1. Kalkulierung</a>
-<ul class="sectlevel3">
-<li><a href="#_berechnerente">2.1.1. berechneRente</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#models">3. Models</a>
-<ul class="sectlevel2">
-<li><a href="#Amount">3.1. <em>Amount</em></a></li>
-<li><a href="#ErrorList">3.2. <em>ErrorList</em></a></li>
-<li><a href="#ErrorListErrors">3.3. <em>ErrorListErrors</em></a></li>
-<li><a href="#RentenParameter">3.4. <em>RentenParameter</em></a></li>
-<li><a href="#RentenParameterKinder">3.5. <em>RentenParameterKinder</em></a></li>
-<li><a href="#RentenParameterZulagen">3.6. <em>RentenParameterZulagen</em></a></li>
-<li><a href="#RentenParameterZulagenKinderzulagen">3.7. <em>RentenParameterZulagenKinderzulagen</em></a></li>
-<li><a href="#RentenSummeResponse">3.8. <em>RentenSummeResponse</em></a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div id="preamble">
-<div class="sectionbody">
-<div class="quoteblock abstract">
-<div class="title">Abstract</div>
-<blockquote>
-base specs without dependencies
-</blockquote>
-</div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_access"><a class="anchor" href="#_access"></a>1. Access</h2>
+<h2 id="_übersicht"><a class="anchor" href="#_übersicht"></a>Übersicht</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>OAuth</strong>  AuthorizationUrl: <em><a href="https://frida-demo.okta.com/oauth2/default/v1/authorize?nonce&#x3D;kdkdkl" class="bare">https://frida-demo.okta.com/oauth2/default/v1/authorize?nonce&#x3D;kdkdkl</a></em>, TokenUrl:   __</p>
-</li>
-<li>
-<p><strong>OAuth</strong>  AuthorizationUrl: <em><a href="https://frida-demo.okta.com/oauth2/default/v1/authorize?nonce&#x3D;kdkdkl" class="bare">https://frida-demo.okta.com/oauth2/default/v1/authorize?nonce&#x3D;kdkdkl</a></em>, TokenUrl:   <em><a href="https://frida-demo.okta.com/oauth2/default/v1/token?nonce&#x3D;kdkdkl" class="bare">https://frida-demo.okta.com/oauth2/default/v1/token?nonce&#x3D;kdkdkl</a></em></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_endpoints"><a class="anchor" href="#_endpoints"></a>2. Endpoints</h2>
-<div class="sectionbody">
-<div class="sect2 Kalkulierung">
-<h3 id="_kalkulierung"><a class="anchor" href="#_kalkulierung"></a>2.1. Kalkulierung</h3>
-<div class="sect3 berechneRente">
-<h4 id="_berechnerente"><a class="anchor" href="#_berechnerente"></a>2.1.1. berechneRente</h4>
 <div class="paragraph">
-<p><code>POST /RentenKalkulation</code></p>
+<p>Der Frida PensionService ermöglicht es dem Kunden, eine Berechnung
+seiner Rente für einen bestimmten Vertrag durchzuführen. Dazu muss der
+Benutzer seine sichtbaren Verträge konfigurieren, auf die auf die die
+DRI-Plattform zugreift, um anschließend die Berechnung anhand der
+Vertragsdaten durchzuführen. Nach dieser Konfiguration sind die Verträge
+im Rentencockpit sichtbar. Nach Auswahl eines bestimmten Vertrag aus der
+abgerufenen Liste kann eine Berechnung durchgeführt werden. Für all
+diese Schritte wird ein Token benötigt, das der Benutzer zuvor bei den
+Identitätsprovidern der Versicherungsgesellschaften anfordern muss.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/User_de.png" alt="Image not found">
+</div>
 </div>
 <div class="paragraph">
-<p>Nutzt oAuth2</p>
+<p>Dieses UML-Diagramm beschreibt die Beziehung zwischen dem Kunden und den
+beiden Plattformen. Er interagiert mit dem DRI-Portal, um seine Rente zu
+berechnen. Die DRI-Plattform fragt dann die Verträge über die
+Kundenplattform ab. Darüber hinaus kann der Kunde über die
+Kundenplattform die sichtbaren Verträge konfigurieren.</p>
 </div>
-<div class="sect4">
-<h5 id="_description"><a class="anchor" href="#_description"></a>Description</h5>
-
-</div>
-<div class="sect4">
-<h5 id="_parameters"><a class="anchor" href="#_parameters"></a>Parameters</h5>
-<div class="sect5">
-<h6 id="_body_parameter"><a class="anchor" href="#_body_parameter"></a>Body Parameter</h6>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 37.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Default</th>
-<th class="tableblock halign-left valign-top">Pattern</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RentenParameter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alle zur Rentenkalkulation benötigten Attribute <a href="#RentenParameter"><em>RentenParameter</em></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="sect2">
+<h3 id="_authentifizierung"><a class="anchor" href="#_authentifizierung"></a>Authentifizierung</h3>
+<div class="imageblock">
+<div class="content">
+<img src="_images/Auth_de.png" alt="Image not found">
 </div>
 </div>
-<div class="sect4">
-<h5 id="_return_type"><a class="anchor" href="#_return_type"></a>Return Type</h5>
 <div class="paragraph">
-<p><a href="#RentenSummeResponse"><em>RentenSummeResponse</em></a></p>
+<p>Die Authentifizierung erfolgt ebenfalls über den Identity Provider des
+Versicherers. Das DRI leitet auf das entsprechende Login-Portal weiter.
+Nach einem erfolgreichen Login wird der Kunde wird der Kunde zum DRI
+weitergeleitet und das Token wird für die spätere Verwendung
+gespeichert. Es wird empfohlen eine einfache Nutzererfahrung zu achten.
+So sollte beispielsweise eine Registrierung möglich sein, sofern noch
+kein Benutzerkonto beim Versicherungsanbieter vorhanden ist.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_content_type"><a class="anchor" href="#_content_type"></a>Content Type</h5>
-<div class="ulist">
-<ul>
-<li>
-<p>application/json</p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="_security"><a class="anchor" href="#_security"></a>Security</h3>
+<div class="sect3">
+<h4 id="_data_in_transit"><a class="anchor" href="#_data_in_transit"></a>Data in Transit</h4>
+<div class="paragraph">
+<p>Bei der Übertragung von Informationen über Kommunikationsnetze besteht
+die Gefahr, dass Informationen unbefugt abgehört oder unbefugt
+manipuliert werden. Um die Vertraulichkeit und die Integrität der
+Informationen sicherzustellen, müssen entsprechende Maßnahmen zur
+Absicherung der Übertragung ergriffen werden. FRIDA nutzt hierbei die
+Empfehlungen und den Mindeststandard gemäß dem Bundesamt für
+Informationssicherheit (BSI), wie hier definiert:<br>
+<a href="https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/CloudComputing/SecurityRecommendationsCloudComputingProviders.pdf" class="bare">https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/CloudComputing/SecurityRecommendationsCloudComputingProviders.pdf</a><br>
+und<br>
+<a href="https://www.bsi.bund.de/DE/Themen/Oeffentliche-Verwaltung/Mindeststandards/TLS-Protokoll/TLS-Protokoll_node.html" class="bare">https://www.bsi.bund.de/DE/Themen/Oeffentliche-Verwaltung/Mindeststandards/TLS-Protokoll/TLS-Protokoll_node.html</a><br></p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_responses"><a class="anchor" href="#_responses"></a>Responses</h5>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. http response codes</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 50%;">
-<col style="width: 16.6667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Code</th>
-<th class="tableblock halign-left valign-top">Message</th>
-<th class="tableblock halign-left valign-top">Datatype</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Erfolgreiche Berechnung</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#RentenSummeResponse"><em>RentenSummeResponse</em></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">403</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Authorisierungsfehler</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ErrorList"><em>ErrorList</em></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">500</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generischer Fehler</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ErrorList"><em>ErrorList</em></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_samples"><a class="anchor" href="#_samples"></a>Samples</h5>
-
+<div class="paragraph">
+<p>Entsprechend gelten folgende Mindeststandards für die Kommunikation:
+* TLS &gt; 1.2 in Kombination mit Perfect Forward Secrecy (PFS)
+ * Ältere TLS oder SSL Versionen dürfen nicht eingesetzt werden
+ * Die Nutzung von HTTPStrict Transport Security (HSTS) wird empfohlen
+* Authentifizierung mittels OpenID Connect 1.0 (OIDC) und Autorisierung mittels OAuth 2.0
+ * Für Single-Page-Applikationen oder native mobile Applikationen: Authorization Code Grant mit PKCE * Webanwendungen mit der Möglichkeit Kennwörter (client secret) sicher speichern zu können: Authorization Code Grant und optional PKCE
+ * Der Implicit Grant wird nicht empfohlen
+ * Der Password Grant darf nicht eingesetzt werden</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="models"><a class="anchor" href="#models"></a>3. Models</h2>
+<h2 id="_data_at_rest_und_data_inside_network"><a class="anchor" href="#_data_at_rest_und_data_inside_network"></a>Data at Rest und Data inside Network</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="Amount"><a class="anchor" href="#Amount"></a>3.1. <em>Amount</em></h3>
-<table class="tableblock frame-all grid-all stretch fields-Amount">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 10%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field Name</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sum</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">currency</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Bei Data at Rest müssen Daten nach folgenden Kriterien sicher
+gespeichert und verarbeitet werden: * Verschlüsselung * Datenschutz *
+Datensicherung * Löschen und Vernichten</p>
 </div>
-<div class="sect2">
-<h3 id="ErrorList"><a class="anchor" href="#ErrorList"></a>3.2. <em>ErrorList</em></h3>
-<table class="tableblock frame-all grid-all stretch fields-ErrorList">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 10%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field Name</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">errors</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">List  of <a href="#ErrorList_errors">[ErrorList_errors]</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Hierbei können die Richtlinien vom BSI eingsetzt werden:
+<a href="https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/IT-Grundschutz-Bausteine/Bausteine_Download_Edition_node.html" class="bare">https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/IT-Grundschutz-Bausteine/Bausteine_Download_Edition_node.html</a></p>
 </div>
-<div class="sect2">
-<h3 id="ErrorListErrors"><a class="anchor" href="#ErrorListErrors"></a>3.3. <em>ErrorListErrors</em></h3>
-<table class="tableblock frame-all grid-all stretch fields-ErrorListErrors">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 10%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field Name</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The code of the error</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A displayable title of the error type</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">detail</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Detail of the error</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional additional data for specific error types</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Um eine vollständige End-to-End Verschlüsselung gewährleisten zu können,
+müssen Maßnahmen zur Sicherung der Daten auch beim Anbieter der Daten
+(z.B. Versicherung) und des Dienstes sichergestellt werden. Dazu gehört
+sowohl eine sichere Speicherung der Daten, als auch die Nutzung von
+Verschlüsselung innerhalb des internen Netzwerks. Die Sicherstellung
+dieser Richtlinien ist nicht Teil der Spezifikation von FRIDA.</p>
 </div>
-<div class="sect2">
-<h3 id="RentenParameter"><a class="anchor" href="#RentenParameter"></a>3.4. <em>RentenParameter</em></h3>
-<table class="tableblock frame-all grid-all stretch fields-RentenParameter">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 10%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field Name</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ArtderVersicherung</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DatumderStandmitteilung</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date in YYYY-DD-MM Format</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Versicherungsbeginn</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date in YYYY-DD-MM Format</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DatumRentenbeginn</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date in YYYY-DD-MM Format</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aktuelleBeitragszahlungen</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AktuellesVorsorgevermögen</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Garantiezins</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ausgewiesenederzeitigenÜberschussbeteiligung</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">derzeitigeGesamtverzinsung</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HöhedergarantiertenAltersrente</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HöhederAltersrentebeiderzeitigenÜberschussbeteiligungen</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HöhedergarantiertenAltersrentebeiFortzahlungderderzeitigenBeiträge</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HöhederAltersrentebeiderzeitigenÜberschussbeteiligungenbeiFortzahlungderderzeitigenBeiträge</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FondskapitalbeiFondswachstumvonXProzentbeiRentenbeginn</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FondskapitalbeiFondswachstumvonXProzentbeiRentenbeginnbeiFortzahlungderderzeitigenBeiträge</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HochrechnungdesgarantiertenAltersvorsorgevermögens</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HochrechnungdesAltersvorsorgevermögens</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rentenfaktor</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AktuellerRentenfaktorjeZehnTausendEuroVorsorgeguthaben</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">GarantierterRentenfaktorjeZehnTausendEuroVorsorgeguthaben</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aktuellejährlichgezahlteZulagen</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">zulagen</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RentenParameter_zulagen</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kinder</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RentenParameter_kinder</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
 </div>
-<div class="sect2">
-<h3 id="RentenParameterKinder"><a class="anchor" href="#RentenParameterKinder"></a>3.5. <em>RentenParameterKinder</em></h3>
-<table class="tableblock frame-all grid-all stretch fields-RentenParameterKinder">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 10%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field Name</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">anzahlderKinder</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">geburtsDatumDerKinder</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">List  of <a href="#date">[date]</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
-</tr>
-</tbody>
-</table>
 </div>
-<div class="sect2">
-<h3 id="RentenParameterZulagen"><a class="anchor" href="#RentenParameterZulagen"></a>3.6. <em>RentenParameterZulagen</em></h3>
-<table class="tableblock frame-all grid-all stretch fields-RentenParameterZulagen">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 10%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field Name</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">grundzulagen</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kinderzulagen</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RentenParameter_zulagen_Kinderzulagen</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="sect1">
+<h2 id="_rentenberechnung"><a class="anchor" href="#_rentenberechnung"></a>Rentenberechnung</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/Case1_de.png" alt="Image not found">
 </div>
-<div class="sect2">
-<h3 id="RentenParameterZulagenKinderzulagen"><a class="anchor" href="#RentenParameterZulagenKinderzulagen"></a>3.7. <em>RentenParameterZulagenKinderzulagen</em></h3>
-<table class="tableblock frame-all grid-all stretch fields-RentenParameterZulagenKinderzulagen">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 10%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field Name</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">anzahlderKinderdieberücksichtigtwerden</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
 </div>
-<div class="sect2">
-<h3 id="RentenSummeResponse"><a class="anchor" href="#RentenSummeResponse"></a>3.8. <em>RentenSummeResponse</em></h3>
-<table class="tableblock frame-all grid-all stretch fields-RentenSummeResponse">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 10%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field Name</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">responseUUID</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date-time</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">summe</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Amount</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Vor dem Start einer Berechnung muss der Anwender entscheiden, welche
+Verträge er der BBS im Kundenportal zugänglich machen möchte. Dazu kann
+er auf das Rentencockpit der BBS zugreifen, die dann eine Anfrage mit
+einem Token an das Kundenportal sendet. Ist dieser Vorgang erfolgreich,
+werden die sichtbaren Verträge an den Kunden zurückgegeben.</p>
 </div>
+<div class="paragraph">
+<p>Der Kunde hat auch die Möglichkeit, einen ausgewählten Vertrag zu
+berechnen, den er an die DRI senden kann. Die BBS fragt dann die
+Stammdaten des ausgewählten Vertrages aus dem Kundenportal mit der
+Methode <code>requestMasterData(selectedContract, token)</code> die Anfrage
+enthält den ausgewählten Die Anfrage enthält den ausgewählten Vertrag
+und ein Token, bei Erfolg erhält die DRI die Stammdaten und berechnet
+daraus die Rentenhöhe, die dann an den Kunden zurückgegeben wird. an den
+Kunden zurückgegeben wird.</p>
+</div>
+Unresolved include directive in modules/PensionService/pages/index.adoc - include::partial$FRIDA_PensionInformation_OA3_full_en.html[]
 </div>
 </div>
 </article>
