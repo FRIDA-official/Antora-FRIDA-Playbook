@@ -15,4 +15,5 @@ content:
 ui:
   bundle:
     url: https://github.com/FRIDA-official/Antora-UI/raw/master/build/ui-bundle.zip
+    snapshot: true
   
