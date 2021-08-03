@@ -2,8 +2,8 @@
 site:
   title: FRIDA
   # The 404 page and sitemap files only get generated when the url property is set
-  start_page: component-pension::PensioService_de.adoc
-  url: https://frida-official.github.io/Antora-FRIDA-Playbook/build/site/component-pension/1.0/PensionService/index.html
+  start_page: component-pension::PensionService_de.adoc
+ 
 
 # Define the components which should be included in the site
 content:
