@@ -45,6 +45,7 @@ jobs:
             branch: ${{ github.ref }}  
             force: true
     Deploy_Website:
+      needs: Update_Website
       runs-on: ubuntu-latest
       steps:
         - name: Checkout 🛎️
