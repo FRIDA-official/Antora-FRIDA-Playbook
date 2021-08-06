@@ -29,7 +29,7 @@ jobs:
         # Add new created files to the commit
         - name: Add files
           run: | 
-            git add ./build/*
+            git add ./build/site/*
             git add .nojekyll
         # Commit all changed files
         - name: Commit files
@@ -38,9 +38,9 @@ jobs:
             git config --local user.name "github-actions[bot]"
             git commit -m "Add changes" --allow-empty
         # Push Commits to the branch you are currently on and force the push
-        - name: Pushing changes to current branch
+        - name: Pushing changes to gh-pages
           uses: ad-m/github-push-action@master          
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            branch: ${{ github.ref }}  
+            branch: gh-pages 
             force: true
