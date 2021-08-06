@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>FRIDA Pension FRIDA</title>
-    <link rel="canonical" href="https://frida-official.github.io/Antora-FRIDA-Playbook/build/site/component-pension/1.0/PensionService/PensionService_de.html/component-pension/1.0/PensionService/en/PensionService.html">
+    <link rel="canonical" href="https://frida-official.github.io/Antora-FRIDA-Playbook/build/site/component-pension/1.0/PensionService/PensionService_de.html/component-pension/1.0/PensionService/de/PensionService.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <script>var uiRootPath = '../../../../_'</script>
@@ -63,8 +63,8 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../de/PensionService.html">Pension Service</a>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="PensionService.html">Pension Service</a>
   </li>
 </ul>
   </li>
@@ -96,7 +96,7 @@
 <button class="nav-toggle"></button>
 
 
-  <div class="edit-this-page"><a href="https://github.com/FRIDA-official/Antora-PensionService/edit/master/docs/modules/PensionService/pages/en/PensionService.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/FRIDA-official/Antora-PensionService/edit/master/docs/modules/PensionService/pages/de/PensionService.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <!--
@@ -106,34 +106,46 @@
 --><article class="doc">
 <h1 class="page">FRIDA Pension</h1>
 <div class="sect1">
-<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<h2 id="_übersicht"><a class="anchor" href="#_übersicht"></a>Übersicht</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Frida PensionService allows customers to perform a calculation of his pension for a specific contract. For this, the user has to configure his visible contracts which can be
-accessed by the DRI platform to perform the calcution using the contract data afterwards. After this configuration the contracts are visible in the pension cockpit. Upon choosing a
-specfic contract from the fetched list a calculation can be performed. All these steps require a token which has to be requested by the user beforehand from the identity providers of
-the insurance companies.</p>
+<p>Der Frida PensionService ermöglicht es dem Kunden, eine Berechnung
+seiner Rente für einen bestimmten Vertrag durchzuführen. Dazu muss der
+Benutzer seine sichtbaren Verträge konfigurieren, auf die auf auch die
+DRI-Plattform zugreift, um anschließend die Berechnung anhand der
+Vertragsdaten durchzuführen. Nach dieser Konfiguration sind die Verträge
+im Rentencockpit sichtbar. Nach Auswahl eines bestimmten Vertrag aus der
+abgerufenen Liste kann eine Berechnung durchgeführt werden. Für all
+diese Schritte wird ein Token benötigt, das der Benutzer zuvor bei den
+Identitätsprovidern der Versicherungsgesellschaften anfordern muss.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/User_en.png" alt="Image not found">
+<img src="../_images/User_de.png" alt="Image not found">
 </div>
 </div>
 <div class="paragraph">
-<p>This UML diagram describes the relationship between the client and the two platforms. He interacts with the DRI portal to calculate his pension.
-The DRI platform then queries the contracts via the customer platform. In addition to that, the customer is able to configure the visible contracts via the customer platform.</p>
+<p>Dieses UML-Diagramm beschreibt die Beziehung zwischen dem Kunden und den
+beiden Plattformen. Er interagiert mit dem DRI-Portal, um seine Rente zu
+berechnen. Die DRI-Plattform fragt dann die Verträge über die
+Kundenplattform ab. Darüber hinaus kann der Kunde über die
+Kundenplattform die sichtbaren Verträge konfigurieren.</p>
 </div>
 <div class="sect2">
-<h3 id="_authentication"><a class="anchor" href="#_authentication"></a>Authentication</h3>
+<h3 id="_authentifizierung"><a class="anchor" href="#_authentifizierung"></a>Authentifizierung</h3>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/Auth_en.png" alt="Image not found" width="730">
+<img src="../_images/Auth_de.png" alt="Image not found" width="730">
 </div>
 </div>
 <div class="paragraph">
-<p>The authentication also is carried out by the incurance company identity provider. The DRI redirects to the relevant login portal. After a successful login the customer
-is redirected to the DRI and the token is saved for later use.<br>
-It is recommended to pay attention to a simple user experience. For example, registration should be possible if a user account does not yet exist with the insurance provider.</p>
+<p>Die Authentifizierung erfolgt ebenfalls über den Identity Provider des
+Versicherers. Das DRI leitet auf das entsprechende Login-Portal weiter.
+Nach einem erfolgreichen Login wird der Kunde wird der Kunde zum DRI
+weitergeleitet und das Token wird für die spätere Verwendung
+gespeichert. Es wird empfohlen eine einfache Nutzererfahrung zu achten.
+So sollte beispielsweise eine Registrierung möglich sein, sofern noch
+kein Benutzerkonto beim Versicherungsanbieter vorhanden ist.</p>
 </div>
 </div>
 <div class="sect2">
@@ -141,74 +153,95 @@ It is recommended to pay attention to a simple user experience. For example, reg
 <div class="sect3">
 <h4 id="_data_in_transit"><a class="anchor" href="#_data_in_transit"></a>Data in Transit</h4>
 <div class="paragraph">
-<p>When information is transmitted via communications networks, there is a risk of unauthorized interception or unauthorized manipulation of information. To ensure the confidentiality and integrity of the information, appropriate measures must be taken to secure the transmission.
-FRIDA uses the recommendations and the minimum standard according to the German Federal Office for Information Security (BSI), as defined here:<br>
-<a href="https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/CloudComputing/SecurityRecommendationsCloudComputingProviders.pdf" class="bare">https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/CloudComputing/SecurityRecommendationsCloudComputingProviders.pdf</a><br>
-and<br>
-<a href="https://www.bsi.bund.de/EN/Themen/Oeffentliche-Verwaltung/Mindeststandards/TLS-Protokoll/TLS-Protokoll_node.html" class="bare">https://www.bsi.bund.de/EN/Themen/Oeffentliche-Verwaltung/Mindeststandards/TLS-Protokoll/TLS-Protokoll_node.html</a><br></p>
+<p>Bei der Übertragung von Informationen über Kommunikationsnetze besteht
+die Gefahr, dass Informationen unbefugt abgehört oder unbefugt
+manipuliert werden. Um die Vertraulichkeit und die Integrität der
+Informationen sicherzustellen, müssen entsprechende Maßnahmen zur
+Absicherung der Übertragung ergriffen werden. FRIDA nutzt hierbei die
+Empfehlungen und den Mindeststandard gemäß dem Bundesamt für
+Informationssicherheit (BSI), wie hier definiert:<br>
+<a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publications/CloudComputing/SecurityRecommendationsCloudComputingProviders.pdf" class="bare">https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publications/CloudComputing/SecurityRecommendationsCloudComputingProviders.pdf</a><br>
+und<br>
+<a href="https://www.bsi.bund.de/DE/Themen/Oeffentliche-Verwaltung/Mindeststandards/TLS-Protokoll/TLS-Protokoll_node.html" class="bare">https://www.bsi.bund.de/DE/Themen/Oeffentliche-Verwaltung/Mindeststandards/TLS-Protokoll/TLS-Protokoll_node.html</a><br></p>
 </div>
 <div class="paragraph">
-<p>Accordingly, the following minimum standards apply to communication:
-* TLS &gt; 1.2 in combination with Perfect Forward Secrecy (PFS).
- * Older TLS or SSL versions must not be used
- * Use of HTTP Strict Transport Security (HSTS) is recommended
-* Authentication using OpenID Connect 1.0 (OIDC) and authorization using OAuth 2.0
- * For single page applications or native mobile applications: Authorization Code Grant with PKCE
- * Web applications with the ability to securely store passwords (client secret): Authorization Code Grant and optional PKCE
- * The Implicit Grant is not recommended</p>
+<p>Entsprechend gelten folgende Mindeststandards für die Kommunikation:
+* TLS &gt; 1.2 in Kombination mit Perfect Forward Secrecy (PFS)
+ * Ältere TLS oder SSL Versionen dürfen nicht eingesetzt werden
+ * Die Nutzung von HTTPStrict Transport Security (HSTS) wird empfohlen
+* Authentifizierung mittels OpenID Connect 1.0 (OIDC) und Autorisierung mittels OAuth 2.0
+ * Für Single-Page-Applikationen oder native mobile Applikationen: Authorization Code Grant mit PKCE
+ * Webanwendungen mit der Möglichkeit Kennwörter (client secret) sicher speichern zu können: Authorization Code Grant und optional PKCE
+ * Der Implicit Grant wird nicht empfohlen
+ * Der Password Grant darf nicht eingesetzt werden</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_data_at_rest"><a class="anchor" href="#_data_at_rest"></a>Data at Rest</h2>
+<h2 id="_data_at_rest_und_data_inside_network"><a class="anchor" href="#_data_at_rest_und_data_inside_network"></a>Data at Rest und Data inside Network</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>At Data at Rest, data must be securely stored and processed according to the following criteria:</p>
+<p>Bei Data at Rest müssen Daten nach folgenden Kriterien sicher gespeichert und verarbeitet werden:</p>
 </li>
 <li>
-<p>Encryption</p>
+<p>Verschlüsselung</p>
 </li>
 <li>
-<p>Data protection</p>
+<p>Datenschutz</p>
 </li>
 <li>
-<p>Data backup</p>
+<p>Datensicherung</p>
 </li>
 <li>
-<p>Deletion and destruction</p>
+<p>Löschen und Vernichten</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Here the guidelines of the BSI can be used:<br>
-<a href="https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/IT-Grundschutz-Bausteine/Bausteine_Download_Edition_node.html" class="bare">https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/IT-Grundschutz-Bausteine/Bausteine_Download_Edition_node.html</a></p>
+<p>Hierbei können die Richtlinien vom BSI eingsetzt werden:<br>
+<a href="https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/IT-Grundschutz-Bausteine/Bausteine_Download_Edition_node.html" class="bare">https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/IT-Grundschutz-Bausteine/Bausteine_Download_Edition_node.html</a></p>
 </div>
 <div class="paragraph">
-<p>In order to be able to guarantee complete end-to-end encryption, measures to secure the data must also be ensured at the provider of the data (e.g. insurance) and the service. This includes both secure storage of the data, as well as the use of encryption within the internal network. Ensuring these guidelines is not part of the FRIDA specification.</p>
+<p>Um eine vollständige End-to-End Verschlüsselung gewährleisten zu können,
+müssen Maßnahmen zur Sicherung der Daten auch beim Anbieter der Daten
+(z.B. Versicherung) und des Dienstes sichergestellt werden. Dazu gehört
+sowohl eine sichere Speicherung der Daten, als auch die Nutzung von
+Verschlüsselung innerhalb des internen Netzwerks. Die Sicherstellung
+dieser Richtlinien ist nicht Teil der Spezifikation von FRIDA.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_pension_calculation"><a class="anchor" href="#_pension_calculation"></a>Pension Calculation</h2>
+<h2 id="_rentenberechnung"><a class="anchor" href="#_rentenberechnung"></a>Rentenberechnung</h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="../_images/Case1_en.png" alt="Image not found">
+<img src="../_images/Case1_de.png" alt="Image not found">
 </div>
 </div>
 <div class="paragraph">
-<p>Before starting any calculation the user has to decide which contracts he wants to make accessible to the DRI on the customer portal.
-He can also access the pension cockpit of the DRI which then sends a request with a token to the customer portal.
-If this process succeed the visible contracts get returned to the customer. &lt;/p&gt; &lt;br&gt;
-&lt;p&gt;The customer also has the option to calculate a selected contract which he can send to the DRI. The DRI then asks for the master data of the
-selected contract from the customer portal with the method <code>requestMasterData(selectedContract, token)</code> the request contains the selected
-contract and a token, if this process succeeds the DRI recieves the master data and uses that data to calculate the pension amout, which then
-gets returned to the customer.<br>
+<p>Vor dem Start einer Berechnung muss der Anwender entscheiden, welche
+Verträge er der BBS im Kundenportal zugänglich machen möchte. Dazu kann
+er auf das Rentencockpit der BBS zugreifen, die dann eine Anfrage mit
+einem Token an das Kundenportal sendet. Ist dieser Vorgang erfolgreich,
+werden die sichtbaren Verträge an den Kunden zurückgegeben.</p>
+</div>
+<div class="paragraph">
+<p>Der Kunde hat auch die Möglichkeit, einen ausgewählten Vertrag zu
+berechnen, den er an die DRI senden kann. Die BBS fragt dann die
+Stammdaten des ausgewählten Vertrages aus dem Kundenportal mit der
+Methode <code>requestMasterData(selectedContract, token)</code> die Anfrage
+enthält den ausgewählten Die Anfrage enthält den ausgewählten Vertrag
+und ein Token, bei Erfolg erhält die DRI die Stammdaten und berechnet
+daraus die Rentenhöhe, die dann an den Kunden zurückgegeben wird. <br>
 <br></p>
+</div>
+<div class="paragraph">
+<p>&lt;div style="max-width:10rem !important;"&gt;</p>
 </div>
 <!DOCTYPE html>
 <html>
@@ -672,6 +705,9 @@ data-styled.g140[id="sc-amkrK"]{content:"icZuVc,"}/*!sc*/
 </body>
 
 </html>
+<div class="paragraph">
+<p>&lt;/div&gt;</p>
+</div>
 </div>
 </div>
 </article>
