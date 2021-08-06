@@ -45,7 +45,10 @@ jobs:
             branch: ${{ github.ref }}  
             force: true
     Deploy_Website:
-        - uses: actions/checkout@master
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout 🛎️
+          uses: actions/checkout@master
         - name: Deploy 🚀
           uses: JamesIves/github-pages-deploy-action@4.1.4
           with:
