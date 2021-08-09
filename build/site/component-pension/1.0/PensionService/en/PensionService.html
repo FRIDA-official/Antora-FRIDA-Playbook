@@ -105,14 +105,13 @@
   <div class="toc-menu"></div>
 </aside>
 --><article class="doc">
-<div class="exampleblock specdescription">
-<div class="content">
-<div class="paragraph">
-<p>= FRIDA Pension</p>
+<div class="paragraph specdescription">
+<p>#
+= FRIDA Pension</p>
 </div>
-<div class="paragraph">
-<p>== Overview</p>
-</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The Frida PensionService allows customers to perform a calculation of his pension for a specific contract. For this, the user has to configure his visible contracts which can be
 accessed by the DRI platform to perform the calcution using the contract data afterwards. After this configuration the contracts are visible in the pension cockpit. Upon choosing a
@@ -128,9 +127,8 @@ the insurance companies.</p>
 <p>This UML diagram describes the relationship between the client and the two platforms. He interacts with the DRI portal to calculate his pension.
 The DRI platform then queries the contracts via the customer platform. In addition to that, the customer is able to configure the visible contracts via the customer platform.</p>
 </div>
-<div class="paragraph">
-<p>=== Authentication</p>
-</div>
+<div class="sect2">
+<h3 id="_authentication"><a class="anchor" href="#_authentication"></a>Authentication</h3>
 <div class="imageblock">
 <div class="content">
 <img src="../_images/Auth_en.png" alt="Image not found" width="730">
@@ -141,12 +139,11 @@ The DRI platform then queries the contracts via the customer platform. In additi
 is redirected to the DRI and the token is saved for later use.<br>
 It is recommended to pay attention to a simple user experience. For example, registration should be possible if a user account does not yet exist with the insurance provider.</p>
 </div>
-<div class="paragraph">
-<p>=== Security</p>
 </div>
-<div class="paragraph">
-<p>==== Data in Transit</p>
-</div>
+<div class="sect2">
+<h3 id="_security"><a class="anchor" href="#_security"></a>Security</h3>
+<div class="sect3">
+<h4 id="_data_in_transit"><a class="anchor" href="#_data_in_transit"></a>Data in Transit</h4>
 <div class="paragraph">
 <p>When information is transmitted via communications networks, there is a risk of unauthorized interception or unauthorized manipulation of information. To ensure the confidentiality and integrity of the information, appropriate measures must be taken to secure the transmission.
 FRIDA uses the recommendations and the minimum standard according to the German Federal Office for Information Security (BSI), as defined here:<br>
@@ -164,9 +161,13 @@ and<br>
  * Web applications with the ability to securely store passwords (client secret): Authorization Code Grant and optional PKCE
  * The Implicit Grant is not recommended</p>
 </div>
-<div class="paragraph">
-<p>== Data at Rest</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_at_rest"><a class="anchor" href="#_data_at_rest"></a>Data at Rest</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -193,9 +194,11 @@ and<br>
 <div class="paragraph">
 <p>In order to be able to guarantee complete end-to-end encryption, measures to secure the data must also be ensured at the provider of the data (e.g. insurance) and the service. This includes both secure storage of the data, as well as the use of encryption within the internal network. Ensuring these guidelines is not part of the FRIDA specification.</p>
 </div>
-<div class="paragraph">
-<p>== Pension Calculation</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_pension_calculation"><a class="anchor" href="#_pension_calculation"></a>Pension Calculation</h2>
+<div class="sectionbody">
 <div class="imageblock">
 <div class="content">
 <img src="../_images/Case1_en.png" alt="Image not found">
@@ -209,9 +212,8 @@ If this process succeed the visible contracts get returned to the customer. &lt;
 selected contract from the customer portal with the method <code>requestMasterData(selectedContract, token)</code> the request contains the selected
 contract and a token, if this process succeeds the DRI recieves the master data and uses that data to calculate the pension amout, which then
 gets returned to the customer.<br>
-<br></p>
-</div>
-</div>
+<br>
+#</p>
 </div>
 <div class="sidebarblock yamlspec">
 <div class="content">
@@ -679,6 +681,8 @@ Redoc.hydrate(__redoc_state, container);</pre>
 </div>
 <div class="paragraph">
 <p>&lt;/html&gt;</p>
+</div>
+</div>
 </div>
 </div>
 </div>
