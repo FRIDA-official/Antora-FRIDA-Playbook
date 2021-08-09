@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>FRIDA Pension FRIDA</title>
+    <title> FRIDA</title>
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <script>var uiRootPath = '../../../../_'</script>
@@ -105,10 +105,14 @@
   <div class="toc-menu"></div>
 </aside>
 --><article class="doc">
-<h1 class="page">FRIDA Pension</h1>
-<div class="sect1">
-<h2 id="_übersicht"><a class="anchor" href="#_übersicht"></a>Übersicht</h2>
-<div class="sectionbody">
+<div class="openblock specdescription">
+<div class="content">
+<div class="paragraph">
+<p>= FRIDA Pension</p>
+</div>
+<div class="paragraph">
+<p>== Übersicht</p>
+</div>
 <div class="paragraph">
 <p>Der Frida PensionService ermöglicht es dem Kunden, eine Berechnung
 seiner Rente für einen bestimmten Vertrag durchzuführen. Dazu muss der
@@ -132,8 +136,9 @@ berechnen. Die DRI-Plattform fragt dann die Verträge über die
 Kundenplattform ab. Darüber hinaus kann der Kunde über die
 Kundenplattform die sichtbaren Verträge konfigurieren.</p>
 </div>
-<div class="sect2">
-<h3 id="_authentifizierung"><a class="anchor" href="#_authentifizierung"></a>Authentifizierung</h3>
+<div class="paragraph">
+<p>=== Authentifizierung</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="../_images/Auth_de.png" alt="Image not found" width="730">
@@ -148,11 +153,12 @@ gespeichert. Es wird empfohlen eine einfache Nutzererfahrung zu achten.
 So sollte beispielsweise eine Registrierung möglich sein, sofern noch
 kein Benutzerkonto beim Versicherungsanbieter vorhanden ist.</p>
 </div>
+<div class="paragraph">
+<p>=== Security</p>
 </div>
-<div class="sect2">
-<h3 id="_security"><a class="anchor" href="#_security"></a>Security</h3>
-<div class="sect3">
-<h4 id="_data_in_transit"><a class="anchor" href="#_data_in_transit"></a>Data in Transit</h4>
+<div class="paragraph">
+<p>==== Data in Transit</p>
+</div>
 <div class="paragraph">
 <p>Bei der Übertragung von Informationen über Kommunikationsnetze besteht
 die Gefahr, dass Informationen unbefugt abgehört oder unbefugt
@@ -176,13 +182,9 @@ und<br>
  * Der Implicit Grant wird nicht empfohlen
  * Der Password Grant darf nicht eingesetzt werden</p>
 </div>
+<div class="paragraph">
+<p>== Data at Rest und Data inside Network</p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_data_at_rest_und_data_inside_network"><a class="anchor" href="#_data_at_rest_und_data_inside_network"></a>Data at Rest und Data inside Network</h2>
-<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -214,11 +216,9 @@ sowohl eine sichere Speicherung der Daten, als auch die Nutzung von
 Verschlüsselung innerhalb des internen Netzwerks. Die Sicherstellung
 dieser Richtlinien ist nicht Teil der Spezifikation von FRIDA.</p>
 </div>
+<div class="paragraph">
+<p>== Rentenberechnung</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_rentenberechnung"><a class="anchor" href="#_rentenberechnung"></a>Rentenberechnung</h2>
-<div class="sectionbody">
 <div class="imageblock">
 <div class="content">
 <img src="../_images/Case1_de.png" alt="Image not found">
@@ -239,6 +239,8 @@ Methode <code>requestMasterData(selectedContract, token)</code> die Anfrage
 enthält den ausgewählten Die Anfrage enthält den ausgewählten Vertrag
 und ein Token, bei Erfolg erhält die DRI die Stammdaten und berechnet
 daraus die Rentenhöhe, die dann an den Kunden zurückgegeben wird.</p>
+</div>
+</div>
 </div>
 <!DOCTYPE html>
 <html>
@@ -692,8 +694,6 @@ data-styled.g140[id="sc-amkrK"]{content:"icZuVc,"}/*!sc*/
 </body>
 
 </html>
-</div>
-</div>
 </article>
   </div>
 </main>
