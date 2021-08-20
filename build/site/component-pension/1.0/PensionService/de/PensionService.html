@@ -112,12 +112,12 @@
 <div class="paragraph">
 <p>Der Frida PensionService ermöglicht es dem Kunden, eine Berechnung
 seiner Rente für einen bestimmten Vertrag durchzuführen. Dazu muss der
-Benutzer seine sichtbaren Verträge konfigurieren, auf die auf auch die
+Benutzer seine sichtbaren Verträge konfigurieren, auf die auch die
 DRI-Plattform zugreift, um anschließend die Berechnung anhand der
 Vertragsdaten durchzuführen. Nach dieser Konfiguration sind die Verträge
 im Rentencockpit sichtbar. Nach Auswahl eines bestimmten Vertrag aus der
 abgerufenen Liste kann eine Berechnung durchgeführt werden. Für all
-diese Schritte wird ein Token benötigt, das der Benutzer zuvor bei den
+diese Schritte wird ein Token benötigt, welches der Benutzer zuvor bei den
 Identitätsprovidern der Versicherungsgesellschaften anfordern muss.</p>
 </div>
 <div class="imageblock">
@@ -141,10 +141,10 @@ Kundenplattform die sichtbaren Verträge konfigurieren.</p>
 </div>
 <div class="paragraph">
 <p>Die Authentifizierung erfolgt ebenfalls über den Identity Provider des
-Versicherers. Das DRI leitet auf das entsprechende Login-Portal weiter.
-Nach einem erfolgreichen Login wird der Kunde wird der Kunde zum DRI
+Versicherers. Das DRI Portal leitet auf das entsprechende Login-Portal weiter.
+Nach einem erfolgreichen Login wird der Kunde zum DRI Portal
 weitergeleitet und das Token wird für die spätere Verwendung
-gespeichert. Es wird empfohlen eine einfache Nutzererfahrung zu achten.
+gespeichert. Es wird empfohlen auf eine einfache Nutzererfahrung zu achten.
 So sollte beispielsweise eine Registrierung möglich sein, sofern noch
 kein Benutzerkonto beim Versicherungsanbieter vorhanden ist.</p>
 </div>
@@ -217,7 +217,7 @@ dieser Richtlinien ist nicht Teil der Spezifikation von FRIDA.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_rentenberechnung"><a class="anchor" href="#_rentenberechnung"></a>Rentenberechnung</h2>
+<h2 id="_vertragsabfrage"><a class="anchor" href="#_vertragsabfrage"></a>Vertragsabfrage</h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
@@ -235,10 +235,9 @@ werden die sichtbaren Verträge an den Kunden zurückgegeben.</p>
 <p>Der Kunde hat auch die Möglichkeit, einen ausgewählten Vertrag zu
 berechnen, den er an die DRI senden kann. Die BBS fragt dann die
 Stammdaten des ausgewählten Vertrages aus dem Kundenportal mit der
-Methode <code>requestMasterData(selectedContract, token)</code> die Anfrage
-enthält den ausgewählten Die Anfrage enthält den ausgewählten Vertrag
-und ein Token, bei Erfolg erhält die DRI die Stammdaten und berechnet
-daraus die Rentenhöhe, die dann an den Kunden zurückgegeben wird. <br></p>
+Methode <code>requestMasterData(selectedContract, token)</code> ab. Die Anfrage
+enthält den ausgewählten Vertrag und ein Token, bei Erfolg erhält die DRI
+die Stammdaten und berechnet daraus die Rentenhöhe, die dann an den Kunden zurückgegeben wird. <br></p>
 </div>
 <!DOCTYPE html>
 <html>
