@@ -112,7 +112,7 @@
 <div class="paragraph">
 <p>The Frida PensionService allows customers to perform a calculation of his pension for a specific contract. For this, the user has to configure his visible contracts which can be
 accessed by the DRI platform to perform the calcution using the contract data afterwards. After this configuration the contracts are visible in the pension cockpit. Upon choosing a
-specfic contract from the fetched list a calculation can be performed. All these steps require a token which has to be requested by the user beforehand from the identity providers of
+specific contract from the fetched list a calculation can be performed. All these steps require a token which has to be requested by the user beforehand from the identity providers of
 the insurance companies.</p>
 </div>
 <div class="imageblock">
@@ -194,7 +194,7 @@ and<br>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_pension_calculation"><a class="anchor" href="#_pension_calculation"></a>Pension Calculation</h2>
+<h2 id="_request_contracts"><a class="anchor" href="#_request_contracts"></a>Request Contracts</h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
@@ -206,8 +206,8 @@ and<br>
 He can also access the pension cockpit of the DRI which then sends a request with a token to the customer portal.
 If this process succeed the visible contracts get returned to the customer. &lt;/p&gt; &lt;br&gt;
 &lt;p&gt;The customer also has the option to calculate a selected contract which he can send to the DRI. The DRI then asks for the master data of the
-selected contract from the customer portal with the method <code>requestMasterData(selectedContract, token)</code> the request contains the selected
-contract and a token, if this process succeeds the DRI recieves the master data and uses that data to calculate the pension amout, which then
+selected contract from the customer portal with the method <code>requestMasterData(selectedContract, token)</code>. The request contains the selected
+contract and a token, if this process succeeds the DRI recieves the master data and uses that data to calculate the pension amount, which then
 gets returned to the customer.<br></p>
 </div>
 <!DOCTYPE html>
