@@ -9,7 +9,6 @@ site:
 content:
   sources:
   - url: https://github.com/FRIDA-official/Antora-PensionService
-    branches: master
     start_path: docs
 # The ui defines the layout of the website. You can find the default ui under https://gitlab.com/antora/antora-ui-default
 # After you fork the repository you can make change it to fit your needs.
