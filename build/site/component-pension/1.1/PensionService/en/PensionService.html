@@ -25,8 +25,8 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Languages</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://frida-official.github.io/Antora-FRIDA-Playbook/component-pension/1.0/PensionService/de/PensionService.html">de</a>
-            <a class="navbar-item" href="https://frida-official.github.io/Antora-FRIDA-Playbook/component-pension/1.0/PensionService/en/PensionService.html">en</a>
+            <a class="navbar-item" href="https://frida-official.github.io/Antora-FRIDA-Playbook/component-pension/1.1/PensionService/de/PensionService.html">de</a>
+            <a class="navbar-item" href="https://frida-official.github.io/Antora-FRIDA-Playbook/component-pension/1.1/PensionService/en/PensionService.html">en</a>
           </div>
         </div>
         <a class="navbar-item" target="_blank" href="https://freeinsurancedata.zulipchat.com/#narrow/stream/296496-general">Chat (Zulip)</a>
@@ -50,7 +50,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="component-pension" data-version="1.0">
+<div class="nav-container" data-component="component-pension" data-version="1.1">
   <aside class="nav">
     <div class="panels">
 <aside style="margin-left: 2em; font-size: 1.25em;" class="toc sidebar" data-title="Contents" data-levels="2">
@@ -75,17 +75,17 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Pension Service</span>
-    <span class="version">1.0</span>
+    <span class="version">1.1</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <a class="title" href="../../../1.1/index.html">Pension Service</a>
+      <a class="title" href="../../index.html">Pension Service</a>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../1.1/index.html">1.1</a>
+        <li class="version is-current is-latest">
+          <a href="../../index.html">1.1</a>
         </li>
-        <li class="version is-current">
-          <a href="../../index.html">1.0</a>
+        <li class="version">
+          <a href="../../../1.0/index.html">1.0</a>
         </li>
       </ul>
     </li>
@@ -97,17 +97,17 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="../../../1.1/PensionService/de/PensionService.html" class="home-link"></a>
+  <a href="../de/PensionService.html" class="home-link"></a>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">1.0</button>
+  <button class="version-menu-toggle" title="Show other versions of page">1.1</button>
   <div class="version-menu">
-    <a class="version" href="../../../1.1/PensionService/en/PensionService.html">1.1</a>
-    <a class="version is-current" href="PensionService.html">1.0</a>
+    <a class="version is-current" href="PensionService.html">1.1</a>
+    <a class="version" href="../../../1.0/PensionService/en/PensionService.html">1.0</a>
   </div>
 </div>
 
 
-  <div class="edit-this-page"><a href="https://github.com/FRIDA-official/Antora-PensionService/edit/master/docs/modules/PensionService/pages/en/PensionService.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/FRIDA-official/Antora-PensionService/edit/1.1/docs/modules/PensionService/pages/en/PensionService.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <!--
@@ -116,8 +116,7 @@
 </aside>
 --><article class="doc">
 <h1 class="page">FRIDA Pension</h1>
-<div class="sect1">
-<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Frida PensionService allows customers to perform a calculation of his pension for a specific contract. For this, the user has to configure his visible contracts which can be
@@ -133,6 +132,8 @@ the insurance companies.</p>
 <div class="paragraph">
 <p>This UML diagram describes the relationship between the client and the two platforms. He interacts with the DRI portal to calculate his pension.
 The DRI platform then queries the contracts via the customer platform. In addition to that, the customer is able to configure the visible contracts via the customer platform.</p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_authentication"><a class="anchor" href="#_authentication"></a>Authentication</h3>
@@ -185,8 +186,6 @@ and<br>
 <p>The Implicit Grant is not recommended</p>
 </li>
 </ul>
-</div>
-</div>
 </div>
 </div>
 </div>
