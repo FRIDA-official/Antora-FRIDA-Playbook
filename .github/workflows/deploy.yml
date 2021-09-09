@@ -4,6 +4,8 @@ name: deploy documentation
 on:
   workflow_dispatch:
   push:
+    branches:
+      - master
 jobs:
     # Job which uses a docker image with pre installed programms 
     Update_Website:
