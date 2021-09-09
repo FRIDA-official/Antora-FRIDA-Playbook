@@ -1,10 +1,10 @@
 name: deploy documentation
     on:
-      # Start workflow if workflow_dispatch is started from a different repository or 
-      # if there is a push on the Antora-FRIDA-Playbook repository on the master branch
-      push:
+     push:
         branches:
           - master
+      # Start workflow if workflow_dispatch is started from a different repository or 
+      # if there is a push on the Antora-FRIDA-Playbook repository on the master branch
       workflow_dispatch:
     jobs:
         # Job which uses a docker image with pre installed programms 
