@@ -2,7 +2,7 @@
 site:
   title: FRIDA
   # The 404 page and sitemap files only get generated when the url property is set
-  start_page: component-pension:PensionService:de/PensionService.adoc
+  start_page: component-pension: de/PensionService.adoc
 
 
 # Define the components which should be included in the site
@@ -11,6 +11,7 @@ content:
   - url: https://github.com/FRIDA-official/Antora-PensionService
     branches: [master, 1.1]
     start_path: docs
+
 # The ui defines the layout of the website. You can find the default ui under https://gitlab.com/antora/antora-ui-default
 # After you fork the repository you can make change it to fit your needs.
 ui:
