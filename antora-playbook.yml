@@ -1,7 +1,7 @@
 # Define the basic settings of the site 
 site:
   title: FRIDA
-  # The 404 page and sitemap files only get generated when the url property is set
+  # The 404 page and sitemap files only get generated when the url property is set 
   start_page: component-pension:PensionService:de/PensionService.adoc
 
 
