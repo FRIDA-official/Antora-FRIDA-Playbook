@@ -60,7 +60,7 @@
 
 <div class="nav-panel-menu is-active" style="visibility: hidden;" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../../index.html">Pension Service</a></h3>-
+    <h3 class="title"><a href="///de/.html">Pension Service</a></h3>-
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -80,14 +80,6 @@
     <span class="version">1.1</span>
   </div>
   <ul class="components">
-    <li class="component">
-      <a class="title" href="../../../../component-homepage/1.0/index.html">FRIDA</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../component-homepage/1.0/index.html">1.0</a>
-        </li>
-      </ul>
-    </li>
     <li class="component is-current">
       <a class="title" href="../../index.html">Pension Service</a>
       <ul class="versions">
@@ -101,6 +93,7 @@
     </li>
   </ul>
 </div>
+<!--.substring(0, #.length - 10)-->
     </div>
   </aside>
 </div>
@@ -129,6 +122,14 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
+<p>THIS IS A PROOF OF CONCEPT FOR THE VERSION CONTROL</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
 <p>The Frida PensionService allows customers to perform a calculation of his pension for a specific contract. For this, the user has to configure his visible contracts which can be
 accessed by the DRI platform to perform the calcution using the contract data afterwards. After this configuration the contracts are visible in the pension cockpit. Upon choosing a
 specific contract from the fetched list a calculation can be performed. All these steps require a token which has to be requested by the user beforehand from the identity providers of
@@ -142,8 +143,6 @@ the insurance companies.</p>
 <div class="paragraph">
 <p>This UML diagram describes the relationship between the client and the two platforms. He interacts with the DRI portal to calculate his pension.
 The DRI platform then queries the contracts via the customer platform. In addition to that, the customer is able to configure the visible contracts via the customer platform.</p>
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_authentication"><a class="anchor" href="#_authentication"></a>Authentication</h3>
@@ -196,6 +195,8 @@ and<br>
 <p>The Implicit Grant is not recommended</p>
 </li>
 </ul>
+</div>
+</div>
 </div>
 </div>
 </div>
